@@ -1,6 +1,7 @@
 let listProductHTML = document.querySelector('.listProduct');
 let listCartHTML = document.querySelector('.listCart');
 let iconCart = document.querySelector('.icon-cart');
+let iconCartSpan = document.querySelector('.icon-cart span');
 let body = document.querySelector('body');
 let closeCart = document.querySelector('.close');
 let products = [];
@@ -63,8 +64,10 @@ const addCartToMemory = () => {
 }
 const addCartToHTML = () => {
     listCartHTML.innerHTML = '';
+    let totalQuantity = 0;
     if(cart.length > 0){
         cart.forEach(item => {
+            totalQuantity = totalQuantity +  item.quantity;
             let newItem = document.createElement('div');
             newItem.classList.add('item');
             newItem.dataset.id = item.product_id;
@@ -88,6 +91,7 @@ const addCartToHTML = () => {
             `;
         })
     }
+    iconCartSpan.innerText = totalQuantity;
 }
 
 listCartHTML.addEventListener('click', (event) => {

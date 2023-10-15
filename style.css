@@ -19,6 +19,22 @@ header{
     align-items: center;
     padding: 20px 0;
 }
+.icon-cart{
+    position: relative;
+}
+.icon-cart span{
+    position: absolute;
+    background-color: red;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color: #fff;
+    top: 50%;
+    right: -20px;
+}
 .title{
     font-size: xx-large;
 }
